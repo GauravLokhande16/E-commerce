@@ -32,9 +32,9 @@ const ProfileScreen = () => {
   return (
     <>
       <Header />
-      <div className="container mt-4  card" style={{ marginLeft: "7vw" }}>
+      <div className="container my-4  card" style={{ marginLeft: "7vw" }}>
         <div className="row">
-          <div className="col-4 card mx-3 mt-4  ">
+          <div className="col-4 card mx-3 my-4  ">
             <div className="container">
               <div className="icon  m-5">
                 <i
@@ -51,14 +51,14 @@ const ProfileScreen = () => {
                 </p>
               </div>
             </div>
-            <div className="container d-inline">
+            <div className="container ">
               <div class="border">
-                <button className="my-2" value={"profile"} onClick={e => handleToggle(e)}>PROFILE SETTINGS</button>
+                <button className="my-2 border-0" value={"profile"} onClick={e => handleToggle(e)} style={{width:"100%"}}>PROFILE SETTINGS</button>
               </div>
               <div class="border mb-2 mt-2">
-                <button className="my-2" value={"order"} onClick={e => handleToggle(e)}   >
+                <button className="my-2 border-0" value={"order"} onClick={e => handleToggle(e)} style={{width:"100%"}}  >
                   ORDER LIST{" "}
-                  <span class="badge text-bg-danger" >{orders ? orders.length : 0}</span>
+                  <span class="badge text-bg-danger my-auto " >{orders ? orders.length : 0}</span>
                 </button>
               </div>
             </div>

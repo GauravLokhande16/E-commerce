@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <nav
           className="navbar navbar-expand-lg "
           style={{ backgroundColor: "#e3f2fd", color: "black" }}
@@ -89,13 +89,12 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <div className="container mt-3 text-center">
-        <div className="row align-items-center">
-          <div className="col-3 py-auto ps-4">
+      <div className="container  text-center">
+        <div className="row d-flex align-items-center">
+          <div className="col-3 mt-2 py-auto ps-4">
            
-            {/* <img src={shoe} alt="shoe" width="90px" height="100px" /> */}
           </div>
-          <div className="col-5 px-5">
+          <div className="col-md-5 mt-2 px-5">
             <form onSubmit={submitHandler} className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -110,7 +109,7 @@ const Header = () => {
               </button>
             </form>
           </div>
-          <div className="col-3 me-0 pe-0 ">
+          <div className="col-md-4 justify-content-around d-flex mt-2">
             {userInfo ? (
               <>
                 <Link to="/profile">
@@ -138,8 +137,7 @@ const Header = () => {
                 </Link>
               </>
             )}
-          </div>
-          <div className="col-1">
+          <div className="my-auto">
             <i
               className="fa-solid fa-cart-shopping"
               style={{ fontSize: "23px" }}
@@ -154,6 +152,7 @@ const Header = () => {
               )
             }
             
+          </div>
           </div>
         </div>
       </div>

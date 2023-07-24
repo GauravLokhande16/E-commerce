@@ -7,8 +7,7 @@ import { logout } from "./userActions";
 export const listProduct = (keyword="", pageNumber="",low="",high="") => async (dispatch) => {
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
-      const { data } = await axios.get(`http://localhost:5000/api/products?keyword=${keyword}&page=${pageNumber}&price[gt]=${low}&price[lt]=${high}`);
-      console.log("Dataadfasdf: ", data);
+      const { data } = await axios.get(`https://server-olkv.onrender.com/api/products?keyword=${keyword}&page=${pageNumber}&price[gt]=${low}&price[lt]=${high}`);
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
@@ -25,7 +24,7 @@ export const listProduct = (keyword="", pageNumber="",low="",high="") => async (
 export const singleProduct = (id)=> async (dispatch)=>{
     try {
       dispatch({type: PRODUCT_DETAILS_REQUEST})
-      const {data} = await axios.get(`http://localhost:5000/api/products/${id}`)
+      const {data} = await axios.get(`https://server-olkv.onrender.com/api/products/${id}`)
       dispatch({type:PRODUCT_DETAILS_SUCCESS, payload:data})
       
     } catch (error) {
@@ -55,7 +54,7 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
           }
       }
 
-      await axios.post(`http://localhost:5000/api/products/${productId}/review`, review, config)
+      await axios.post(`https://server-olkv.onrender.com/api/products/${productId}/review`, review, config)
     
       dispatch({type:PRODUCT_CREATE_REVIEW_SUCCESS});
 

@@ -11,6 +11,7 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import Login from "./screens/Login";
 import OrderScreen from "./screens/OrderScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import Footer from "./components/Footer"
 import NotFound from "./screens/NotFound";
 import { useSelector } from "react-redux";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/profile' element={<ProfileScreen />}  />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import products from "../../data/Product";
 import { useDispatch, useSelector } from "react-redux";
 import { listProduct } from "../../Redux/Actions/ProductActions";
 import Loading from "../LoadingError/Loading";
@@ -25,7 +24,7 @@ const ShopSection = (props) => {
   }, [keyword, pagenumber,low,high]);
 
   return (
-    <div className=" container text-start mx-2 mt-5 ">
+    <div className=" container-fluid text-start mx-2 mt-5 ">
       <div className="row ">
         <div className="col-md-2">
             <p className="mb-0"><strong>Price Filter</strong></p>
@@ -44,7 +43,7 @@ const ShopSection = (props) => {
             }}
           />
         </div>
-        <div className=" border-start   col-10">
+        <div className=" border-start mt-3  col-md-10">
           <div className="d-flex justify-content-center " style={{flexWrap:"wrap"}}>
             {loading ? (
               <Loading />
@@ -54,7 +53,7 @@ const ShopSection = (props) => {
               products.map((product) => {
                 return (
                   <div className="mx-3 my-3" key={product._id}>
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card" style={{ width: "15rem" }}>
                       <Link to={`/products/${product._id}`}>
                         <img
                           src={product.image}
