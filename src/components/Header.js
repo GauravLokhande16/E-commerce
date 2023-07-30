@@ -29,7 +29,6 @@ const Header = () => {
   }
 
 
-
   return (
     <>
       <div className="container-fluid">
@@ -103,13 +102,14 @@ const Header = () => {
                 placeholder="Search"
                 aria-label="Search"
                 onChange={e => setKeyword(e.target.value)}
+                style={{width: '100%'}}
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success " type="submit">
                 Search
               </button>
             </form>
           </div>
-          <div className="col-md-4 justify-content-around d-flex mt-2">
+          <div className="col-md-4 justify-content-around d-flex mt-2 px-2">
             {userInfo ? (
               <>
                 <Link to="/profile">
