@@ -89,8 +89,8 @@ const PlaceOrderScreen = () => {
                 <p className="m-0">
                   <strong>Customer</strong>
                 </p>
-                <p className="m-0">{userInfo.name}</p>
-                <p className="m-0">{userInfo.email}</p>
+                <p className="m-0">{userInfo?.name}</p>
+                <p className="m-0">{userInfo?.email}</p>
               </div>
             </div>
             <div className="col-md-4 d-flex ">
@@ -219,8 +219,10 @@ const PlaceOrderScreen = () => {
                 type="button"
                 className="btn btn-success me-5"
                 style={{ width: "40%" }}
-                onMouseOver={()=>setPay(true)}
-                onClick={placeOrderHandler}
+                onClick={()=>{
+                  setPay(true)
+                  placeOrderHandler()
+                }}
               >
                   Pay Now
               </button>
