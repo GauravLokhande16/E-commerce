@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeScreen />} exact />
@@ -36,8 +36,8 @@ function App() {
           <Route path='/profile' element={<ProfileScreen />}  />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
+        {/* <Footer /> */}
     </div>
   );
 }

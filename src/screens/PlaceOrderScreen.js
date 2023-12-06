@@ -56,6 +56,8 @@ const PlaceOrderScreen = () => {
         isPaid: pay
       })
     );
+    alert("Your order has been created successfully.")
+    navigate("/")
   };
 
  
@@ -219,9 +221,10 @@ const PlaceOrderScreen = () => {
                 type="button"
                 className="btn btn-success me-5"
                 style={{ width: "40%" }}
-                onClick={()=>{
-                  setPay(true)
-                  placeOrderHandler()
+                onClick={(e)=>{
+                  alert("This function is not currently supported")
+                  // setPay(true)
+                  // placeOrderHandler(e)
                 }}
               >
                   Pay Now

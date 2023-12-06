@@ -17,11 +17,19 @@ const ShopSection = (props) => {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
   
-  console.log("Page", pages, page);
-
+ 
+  // Debouncing function
   useEffect(() => {
-    dispatch(listProduct(keyword, pagenumber,low, high));
+    const delay = 500; 
+    const timer = setTimeout(() => {
+      dispatch(listProduct(keyword, pagenumber,low, high));
+    }, delay);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [keyword, pagenumber,low,high]);
+
 
   return (
     <div className=" container-fluid text-start mx-2 mt-5 ">
